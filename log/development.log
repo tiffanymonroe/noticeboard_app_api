@@ -1,0 +1,492 @@
+  [1m[35m (20.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (26.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2294373376959684510)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNotices (20170905153516)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (41.5ms)[0m  [1m[35mCREATE TABLE "notices" ("id" bigserial primary key, "title" character varying, "author" character varying, "content" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170905153516"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-09-05 15:42:26.314298"], ["updated_at", "2017-09-05 15:42:26.314298"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2294373376959684510)[0m
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "J'ai une âme solitaire."], ["author", "Darth Vader"], ["content", "Assumenda non dolorem. Ut error voluptatem necessitatibus. Voluptatibus non officia perspiciatis laboriosam. Enim ratione ea vel illum non corporis voluptatem."], ["created_at", "2017-09-05 15:50:03.382639"], ["updated_at", "2017-09-05 15:50:03.382639"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Harry, is that bag smiling?"], ["author", "Padme Amidala"], ["content", "Aperiam laboriosam incidunt omnis alias possimus et quod. Impedit reprehenderit hic in expedita. Assumenda tempore ipsum."], ["created_at", "2017-09-05 15:50:03.398703"], ["updated_at", "2017-09-05 15:50:03.398703"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Yoda"], ["content", "Fuga ex asperiores omnis sit et. Quasi sed quia ut minima laudantium aut. Temporibus cumque corporis repellendus assumenda qui cum. Corrupti est minima rerum cum."], ["created_at", "2017-09-05 15:50:03.401869"], ["updated_at", "2017-09-05 15:50:03.401869"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Audrey, there are many cures for a broken heart. But nothing quite like a trout's leap in the moonlight."], ["author", "Poe Dameron"], ["content", "Autem excepturi iste. Perspiciatis quae facere. Est pariatur eum."], ["created_at", "2017-09-05 15:50:03.404108"], ["updated_at", "2017-09-05 15:50:03.404108"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA."], ["author", "Jar Jar Binks"], ["content", "Eligendi qui voluptatem alias et pariatur sed quia. Eos aut accusamus voluptas placeat asperiores. Odit fugiat iste exercitationem error quis sit. Eum molestiae ut illum."], ["created_at", "2017-09-05 15:50:03.406659"], ["updated_at", "2017-09-05 15:50:03.406659"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You know, this is — excuse me — a damn fine cup of coffee!"], ["author", "Boba Fett"], ["content", "Magni sed aut doloribus aspernatur ratione facere eos. Ut dolor error et voluptatem facere. Exercitationem ad laboriosam omnis recusandae odio odit. Aut sed possimus dolorum sequi non ea."], ["created_at", "2017-09-05 15:50:03.414022"], ["updated_at", "2017-09-05 15:50:03.414022"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't wanna talk. I wanna shoot."], ["author", "Jabba the Hutt"], ["content", "Atque est libero quisquam nemo neque. Quidem eaque molestiae est doloribus molestias expedita fugiat. Temporibus quas quam. Magni quis deserunt."], ["created_at", "2017-09-05 15:50:03.423159"], ["updated_at", "2017-09-05 15:50:03.423159"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Will this sadness that makes me cry my heart out — will it ever end? The answer, of course, is yes. One day the sadness will end."], ["author", "Chewbacca"], ["content", "Sint enim dolor. Repellendus rem nulla perspiciatis. Fuga autem quia adipisci enim quas."], ["created_at", "2017-09-05 15:50:03.431542"], ["updated_at", "2017-09-05 15:50:03.431542"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Leia Organa"], ["content", "Libero optio voluptatem est. Perspiciatis et dolore. Fuga quo architecto. Numquam beatae aut sit voluptatibus labore. Et odit repudiandae voluptatem quia dolorem et nisi."], ["created_at", "2017-09-05 15:50:03.439184"], ["updated_at", "2017-09-05 15:50:03.439184"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You may think I've gone insane... but I promise. I will kill again."], ["author", "Sebulba"], ["content", "Exercitationem dolorem nihil quia nostrum fugiat aut est. Ad vitae dolorem. Deserunt dolor et eaque."], ["created_at", "2017-09-05 15:50:03.442547"], ["updated_at", "2017-09-05 15:50:03.442547"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Audrey, there are many cures for a broken heart. But nothing quite like a trout's leap in the moonlight."], ["author", "Boba Fett"], ["content", "Et similique eius id autem corrupti. Soluta alias et. Officia fuga dolor. Mollitia voluptatibus minima qui."], ["created_at", "2017-09-05 15:50:03.448304"], ["updated_at", "2017-09-05 15:50:03.448304"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Audrey, there are many cures for a broken heart. But nothing quite like a trout's leap in the moonlight."], ["author", "Rune Haako"], ["content", "Repellendus blanditiis nihil. Aspernatur quisquam molestias in. Porro et quaerat. Quam quia et sed ut corporis."], ["created_at", "2017-09-05 15:50:03.452060"], ["updated_at", "2017-09-05 15:50:03.452060"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Do you want to know what the ultimate secret is? Laura did. The secret of knowing who killed you."], ["author", "Obi-Wan Kenobi"], ["content", "Rerum maxime deserunt debitis ullam sapiente. Fugiat numquam quia iste dicta et. Quis fuga quae quam. Ab illum harum occaecati et similique facilis. Ipsam praesentium aliquid sit sed et nam."], ["created_at", "2017-09-05 15:50:03.454738"], ["updated_at", "2017-09-05 15:50:03.454738"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Will this sadness that makes me cry my heart out — will it ever end? The answer, of course, is yes. One day the sadness will end."], ["author", "Sheev Palpatine"], ["content", "Earum maxime beatae. Debitis necessitatibus sequi. Eos alias et ipsum quidem eligendi rerum ut. Dolores non consectetur incidunt."], ["created_at", "2017-09-05 15:50:03.458119"], ["updated_at", "2017-09-05 15:50:03.458119"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It has been a pleasure speaking to you."], ["author", "Ben Solo"], ["content", "Ad laboriosam blanditiis voluptatem explicabo architecto. Dolorum ut pariatur dolores voluptas placeat voluptas expedita. Quam et consequatur architecto aliquam dolorem magni nemo."], ["created_at", "2017-09-05 15:50:03.462410"], ["updated_at", "2017-09-05 15:50:03.462410"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There's nothing quite like urinating in the open air."], ["author", "Anakin Skywalker"], ["content", "Ullam aspernatur eum occaecati libero. Sed sint esse assumenda. Ipsa nulla doloremque autem eligendi et repellat qui. Harum accusamus ipsam tenetur explicabo voluptas aut."], ["created_at", "2017-09-05 15:50:03.465926"], ["updated_at", "2017-09-05 15:50:03.465926"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I have no idea where this will lead us. But I have a definite feeling it will be a place both wonderful and strange."], ["author", "Chewbacca"], ["content", "Dicta est sint rerum animi occaecati. Commodi aut et. Distinctio amet quod animi nihil omnis."], ["created_at", "2017-09-05 15:50:03.468542"], ["updated_at", "2017-09-05 15:50:03.468542"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Black as midnight on a moonless night."], ["author", "Darth Caedus"], ["content", "Doloremque vitae velit perferendis eligendi aut quia. Neque et fugit dolorem. Et aut harum voluptatem aliquam eligendi voluptate ut."], ["created_at", "2017-09-05 15:50:03.470541"], ["updated_at", "2017-09-05 15:50:03.470541"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You may think I've gone insane... but I promise. I will kill again."], ["author", "Poe Dameron"], ["content", "Iste quidem aut quam aperiam explicabo a quia. Accusantium qui excepturi quia incidunt quo at occaecati. Ducimus et et ut veritatis omnis ut qui. Perferendis sequi harum. Sed nostrum autem est recusandae aut totam."], ["created_at", "2017-09-05 15:50:03.472975"], ["updated_at", "2017-09-05 15:50:03.472975"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Do you want to know what the ultimate secret is? Laura did. The secret of knowing who killed you."], ["author", "Jar Jar Binks"], ["content", "Quae vel omnis voluptatibus nesciunt perferendis animi quis. Ut deserunt dolores officiis porro. Est autem est distinctio harum mollitia amet."], ["created_at", "2017-09-05 15:50:03.475435"], ["updated_at", "2017-09-05 15:50:03.475435"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Black as midnight on a moonless night."], ["author", "Panaka"], ["content", "Est ex quasi dolor. Officiis qui earum sapiente sint et optio. Et soluta sed omnis et veritatis excepturi aut. Aut voluptas maxime error. Iste quia non velit enim sequi."], ["created_at", "2017-09-05 15:50:03.478865"], ["updated_at", "2017-09-05 15:50:03.478865"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You know, this is — excuse me — a damn fine cup of coffee!"], ["author", "Panaka"], ["content", "Ut culpa et. Est non quo. Amet reprehenderit adipisci. Id dicta facilis est aliquid quidem."], ["created_at", "2017-09-05 15:50:03.483963"], ["updated_at", "2017-09-05 15:50:03.483963"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "MAY A SMILE BE YOUR UMBRELLA. WE'VE ALL HAD OUR SOCKS TOSSED AROUND."], ["author", "Darth Maul"], ["content", "Ea id consequatur eveniet et magnam repellat corrupti. Quaerat voluptatem necessitatibus ea et ea. Est similique culpa voluptas velit."], ["created_at", "2017-09-05 15:50:03.489178"], ["updated_at", "2017-09-05 15:50:03.489178"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Do you want to know what the ultimate secret is? Laura did. The secret of knowing who killed you."], ["author", "Qui-Gon Jinn"], ["content", "Ea sit voluptas qui magnam magni quasi. Voluptas veritatis ab. Voluptas quibusdam in veniam. Sapiente rem facilis id sit blanditiis ut."], ["created_at", "2017-09-05 15:50:03.492668"], ["updated_at", "2017-09-05 15:50:03.492668"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA."], ["author", "Lando Calrissian"], ["content", "Ducimus consequatur libero quos eum enim. Quas voluptates qui illo tenetur. At aut rerum sint reprehenderit quis. Laudantium laborum maxime."], ["created_at", "2017-09-05 15:50:03.496694"], ["updated_at", "2017-09-05 15:50:03.496694"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Jango Fett"], ["content", "Ipsum incidunt qui corrupti molestiae doloremque enim vitae. Hic consequuntur illum nihil assumenda quasi est cupiditate. Rerum exercitationem dolores qui consectetur sit quia. Voluptate atque perferendis doloremque dolore."], ["created_at", "2017-09-05 15:50:03.501464"], ["updated_at", "2017-09-05 15:50:03.501464"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "YOU ARE WITNESSING A FRONT THREE-QUARTER VIEW OF TWO ADULTS SHARING A TENDER MOMENT"], ["author", "Mace Windu"], ["content", "Amet porro enim corrupti voluptas aut sint harum. Architecto qui temporibus assumenda impedit ipsam. Numquam velit et voluptate ut. Excepturi sunt maxime aut laboriosam laborum odio."], ["created_at", "2017-09-05 15:50:03.504215"], ["updated_at", "2017-09-05 15:50:03.504215"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You may think I've gone insane... but I promise. I will kill again."], ["author", "Kylo Ren"], ["content", "Est ipsum voluptatum explicabo expedita et qui. Et consequatur inventore voluptas explicabo eos rerum. Animi accusamus harum id qui tempora omnis nihil."], ["created_at", "2017-09-05 15:50:03.506804"], ["updated_at", "2017-09-05 15:50:03.506804"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There's nothing quite like urinating in the open air."], ["author", "Jar Jar Binks"], ["content", "Deleniti ut ipsum quos error rerum esse velit. Nihil culpa rerum in animi sed. Labore quo quia nesciunt aperiam sit nobis quos. Beatae rem aut."], ["created_at", "2017-09-05 15:50:03.509933"], ["updated_at", "2017-09-05 15:50:03.509933"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Bail Organa"], ["content", "Similique quis perferendis saepe quia excepturi tempora. Nihil aut voluptatem. Ratione ab minus velit aliquam aut. Molestias illo quam hic consectetur aliquam architecto."], ["created_at", "2017-09-05 15:50:03.513721"], ["updated_at", "2017-09-05 15:50:03.513721"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Wow, Bob, wow."], ["author", "Boba Fett"], ["content", "Sit et aut ipsa. Aut et esse. Aut ut quaerat voluptatibus et dolorum culpa."], ["created_at", "2017-09-05 15:50:03.516477"], ["updated_at", "2017-09-05 15:50:03.516477"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["author", "Ki-Adi-Mundi"], ["content", "Quisquam impedit similique recusandae. Sed enim et ducimus quia et laboriosam earum. Voluptates et odio commodi facere."], ["created_at", "2017-09-05 15:50:03.519773"], ["updated_at", "2017-09-05 15:50:03.519773"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Luke Skywalker"], ["content", "Ex cum dicta eum qui. Ea velit facere molestiae. Veritatis aliquam vel possimus quae. Omnis repellat quaerat consequatur. Eos ut laudantium aut corporis."], ["created_at", "2017-09-05 15:50:03.525521"], ["updated_at", "2017-09-05 15:50:03.525521"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA."], ["author", "Ben Solo"], ["content", "Qui aut sint officia cumque tempore consectetur aut. Quae sit asperiores nemo et. Qui ut nam amet officia atque."], ["created_at", "2017-09-05 15:50:03.528841"], ["updated_at", "2017-09-05 15:50:03.528841"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It has been a pleasure speaking to you."], ["author", "Mace Windu"], ["content", "Dolor molestiae dignissimos necessitatibus blanditiis neque consequatur rerum. Cum architecto enim est sint accusantium quia. Quo sapiente laudantium perspiciatis error quod impedit. At excepturi aut ex."], ["created_at", "2017-09-05 15:50:03.532419"], ["updated_at", "2017-09-05 15:50:03.532419"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Nute Gunray"], ["content", "Ut qui voluptas quasi distinctio et facilis officiis. Aliquid consequatur dolorum. Et ad amet maiores. Minus est omnis et repudiandae aperiam. Nobis cupiditate odit minima."], ["created_at", "2017-09-05 15:50:03.534906"], ["updated_at", "2017-09-05 15:50:03.534906"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I have no idea where this will lead us. But I have a definite feeling it will be a place both wonderful and strange."], ["author", "Borvo the Hutt"], ["content", "Quibusdam consequatur quis molestiae laudantium quae. Deserunt dolor sapiente voluptas magni autem. Deserunt in unde. Aut inventore voluptas non maiores reprehenderit."], ["created_at", "2017-09-05 15:50:03.536981"], ["updated_at", "2017-09-05 15:50:03.536981"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There was a fish in the percolator!"], ["author", "Ben Solo"], ["content", "Et voluptatum eos corrupti molestias. Adipisci possimus blanditiis rerum repudiandae omnis pariatur. Voluptates aut natus ut consequatur. Reprehenderit tenetur pariatur enim at dolore."], ["created_at", "2017-09-05 15:50:03.539664"], ["updated_at", "2017-09-05 15:50:03.539664"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Darth Caedus"], ["content", "Nihil quia autem. Reiciendis omnis et error perspiciatis minus. Optio impedit illo."], ["created_at", "2017-09-05 15:50:03.542605"], ["updated_at", "2017-09-05 15:50:03.542605"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["author", "Darth Maul"], ["content", "Exercitationem qui odit praesentium. Vel quis modi et at. Iste est occaecati minima sunt. Aut doloremque nostrum minus eaque et. Perferendis non culpa fugiat consequatur."], ["created_at", "2017-09-05 15:50:03.548116"], ["updated_at", "2017-09-05 15:50:03.548116"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Will this sadness that makes me cry my heart out — will it ever end? The answer, of course, is yes. One day the sadness will end."], ["author", "Bail Organa"], ["content", "Iusto laboriosam expedita. Molestiae magnam atque aspernatur consequatur assumenda. Quibusdam et aut. Ullam possimus quis quae commodi aut. Eius aliquid dolorum et."], ["created_at", "2017-09-05 15:50:03.550766"], ["updated_at", "2017-09-05 15:50:03.550766"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Padme Amidala"], ["content", "Vitae consequatur voluptatem consectetur qui ut et. Quae nihil non dolorem qui magni impedit. Minima nemo pariatur tempora est."], ["created_at", "2017-09-05 15:50:03.553603"], ["updated_at", "2017-09-05 15:50:03.553603"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Where we're from, the birds sing a pretty song, and there's always music in the air."], ["author", "Poe Dameron"], ["content", "Consectetur occaecati sed et et sed excepturi. Aut magni eius at magnam repellat ea. Nostrum laudantium reprehenderit nihil. Dignissimos ut animi et dolorum eos voluptatem ea. Omnis nihil quia eveniet sint."], ["created_at", "2017-09-05 15:50:03.555941"], ["updated_at", "2017-09-05 15:50:03.555941"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I have no idea where this will lead us. But I have a definite feeling it will be a place both wonderful and strange."], ["author", "Yoda"], ["content", "Asperiores aliquam natus aspernatur. Cumque quod consequatur nihil consectetur. Accusantium autem dolor sequi rerum blanditiis. Et excepturi at reprehenderit corrupti eveniet modi quasi. Quis quidem explicabo iure optio maiores."], ["created_at", "2017-09-05 15:50:03.558482"], ["updated_at", "2017-09-05 15:50:03.558482"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Qui-Gon Jinn"], ["content", "Voluptatibus voluptas atque. Omnis enim ut aut libero fugiat eaque. Id minus ut rerum fugiat qui. Voluptas inventore neque eos est itaque qui. Alias odit dignissimos dolores tenetur dolorem optio velit."], ["created_at", "2017-09-05 15:50:03.567772"], ["updated_at", "2017-09-05 15:50:03.567772"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "She's dead... Wrapped in plastic."], ["author", "Anakin Skywalker"], ["content", "Consectetur cumque dolores animi perspiciatis sint et. Ipsam suscipit libero quia non qui. Itaque eligendi aut voluptatem totam."], ["created_at", "2017-09-05 15:50:03.571594"], ["updated_at", "2017-09-05 15:50:03.571594"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Pie. Whoever invented the pie? Here was a great person."], ["author", "Anakin Skywalker"], ["content", "Itaque laudantium velit provident aspernatur. Magni ut laboriosam. Sed rem saepe soluta et et."], ["created_at", "2017-09-05 15:50:03.575152"], ["updated_at", "2017-09-05 15:50:03.575152"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Nute Gunray"], ["content", "Ipsa et possimus assumenda quasi quae omnis facere. Eum voluptas officia. Occaecati labore quis."], ["created_at", "2017-09-05 15:50:03.578109"], ["updated_at", "2017-09-05 15:50:03.578109"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sometimes jokes are welcome. Like the one about the kid who said: \"I enjoyed school. It was just the principal of the thing.\""], ["author", "Jango Fett"], ["content", "Ut nihil perferendis. Rerum cumque et. Eos exercitationem placeat maiores totam itaque sed. Tempora omnis vel sunt voluptas id ipsam adipisci. Id harum aspernatur laudantium."], ["created_at", "2017-09-05 15:50:03.582732"], ["updated_at", "2017-09-05 15:50:03.582732"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "MAY A SMILE BE YOUR UMBRELLA. WE'VE ALL HAD OUR SOCKS TOSSED AROUND."], ["author", "Qui-Gon Jinn"], ["content", "Nisi rerum est consequatur fugiat. Asperiores magnam est. Dolores deserunt quae id. Odio sit itaque ex placeat. Dignissimos occaecati voluptas qui ut minus quisquam."], ["created_at", "2017-09-05 15:50:03.586299"], ["updated_at", "2017-09-05 15:50:03.586299"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Will this sadness that makes me cry my heart out — will it ever end? The answer, of course, is yes. One day the sadness will end."], ["author", "Sebulba"], ["content", "Dolores facilis hic. Quos ut sunt quasi autem aut. Dignissimos sit et inventore perspiciatis dolor corporis sint. Nisi ut sunt voluptas. Ea accusantium mollitia."], ["created_at", "2017-09-05 15:50:03.590951"], ["updated_at", "2017-09-05 15:50:03.590951"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "YOU ARE WITNESSING A FRONT THREE-QUARTER VIEW OF TWO ADULTS SHARING A TENDER MOMENT"], ["author", "Darth Maul"], ["content", "Explicabo voluptatum est suscipit dicta repellat aspernatur. Sed qui sunt quia ut. Vel illo omnis molestias perspiciatis nobis. Mollitia earum et. Tempore aut consequatur fugiat soluta excepturi."], ["created_at", "2017-09-05 15:50:03.595581"], ["updated_at", "2017-09-05 15:50:03.595581"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Darth Sidious"], ["content", "Pariatur optio recusandae quis voluptate qui quis. Harum quidem et error consequatur illum. In exercitationem quaerat et rerum esse."], ["created_at", "2017-09-05 15:50:03.599667"], ["updated_at", "2017-09-05 15:50:03.599667"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Jabba the Hutt"], ["content", "Sit sed culpa ut qui aut dolore porro. Numquam sequi distinctio dolorum molestias. Dignissimos rem autem eum eligendi. Nihil temporibus doloremque saepe."], ["created_at", "2017-09-05 15:50:03.602959"], ["updated_at", "2017-09-05 15:50:03.602959"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "She's dead... Wrapped in plastic."], ["author", "Sebulba"], ["content", "Velit dolores accusantium ea quia facere corporis. Ut beatae earum perspiciatis. Aut veniam facere incidunt sit quam quod quidem. Consequatur repudiandae totam voluptatem harum quaerat et cum."], ["created_at", "2017-09-05 15:50:03.606755"], ["updated_at", "2017-09-05 15:50:03.606755"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "J'ai une âme solitaire."], ["author", "Wedge Antilles"], ["content", "Eaque aliquid beatae molestiae. Maiores occaecati et qui eum. Voluptas vel laboriosam quaerat suscipit sit veniam aperiam. Debitis rem id. Beatae vel libero."], ["created_at", "2017-09-05 15:50:03.609507"], ["updated_at", "2017-09-05 15:50:03.609507"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA."], ["author", "Nute Gunray"], ["content", "Commodi aliquid voluptate. Nostrum in molestiae quia autem culpa voluptates et. Animi fuga qui eveniet quam quas beatae voluptate. Temporibus quia qui earum nihil voluptatum. Alias omnis dolore."], ["created_at", "2017-09-05 15:50:03.612241"], ["updated_at", "2017-09-05 15:50:03.612241"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["author", "Nute Gunray"], ["content", "Quis totam sint porro qui quia rerum. Veniam quisquam explicabo beatae architecto laudantium magnam. Perferendis et at sed dolor aliquam. Sed perspiciatis qui veritatis exercitationem. Ea fuga nam saepe."], ["created_at", "2017-09-05 15:50:03.618071"], ["updated_at", "2017-09-05 15:50:03.618071"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA."], ["author", "Poe Dameron"], ["content", "Veritatis consequuntur molestias aspernatur accusamus. Inventore dolore rem culpa sit. Modi commodi nostrum quisquam. Quibusdam et alias. Voluptas asperiores consequatur aperiam voluptatem eos perferendis quidem."], ["created_at", "2017-09-05 15:50:03.620886"], ["updated_at", "2017-09-05 15:50:03.620886"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There was a fish in the percolator!"], ["author", "Darth Maul"], ["content", "Eos iusto ea. Rem facilis vitae nobis. Possimus aut accusamus beatae dolor."], ["created_at", "2017-09-05 15:50:03.623640"], ["updated_at", "2017-09-05 15:50:03.623640"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I have no idea where this will lead us. But I have a definite feeling it will be a place both wonderful and strange."], ["author", "Yoda"], ["content", "Ut vero vitae reiciendis ut voluptates. Deserunt dolore dolor. Architecto aut aut necessitatibus dolores. In dolor optio et ut. Voluptatem voluptates iste culpa dolorem aliquam voluptate."], ["created_at", "2017-09-05 15:50:03.626675"], ["updated_at", "2017-09-05 15:50:03.626675"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Jar Jar Binks"], ["content", "Repellendus rerum provident accusamus perferendis. Voluptatem eligendi mollitia sed earum saepe. Veniam quo animi. Eos similique velit est eius sed. Error ullam qui minus."], ["created_at", "2017-09-05 15:50:03.629833"], ["updated_at", "2017-09-05 15:50:03.629833"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't wanna talk. I wanna shoot."], ["author", "Count Dooku"], ["content", "Vero et voluptatem. Rem id modi ut quia. Veniam eaque voluptatem a est. Numquam quisquam natus consequatur vitae laborum rerum."], ["created_at", "2017-09-05 15:50:03.633327"], ["updated_at", "2017-09-05 15:50:03.633327"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You may think I've gone insane... but I promise. I will kill again."], ["author", "Jar Jar Binks"], ["content", "Earum laboriosam quo atque velit rerum. Praesentium et laudantium tempore. Quae fuga sed ipsa magni. Nostrum quis repellendus qui. Nulla voluptatibus est inventore temporibus eum rerum."], ["created_at", "2017-09-05 15:50:03.636277"], ["updated_at", "2017-09-05 15:50:03.636277"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["author", "Han Solo"], ["content", "Autem similique architecto eaque maxime qui et voluptates. In quidem omnis. Ut rem facilis. Eum veniam sint."], ["created_at", "2017-09-05 15:50:03.641420"], ["updated_at", "2017-09-05 15:50:03.641420"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There was a fish in the percolator!"], ["author", "Rune Haako"], ["content", "Qui dolorem aut rem perferendis aliquam eius possimus. Sunt eum temporibus totam. Quisquam maxime saepe velit molestiae eos qui tempore. Blanditiis quod necessitatibus labore nam in quae. Quibusdam officiis a."], ["created_at", "2017-09-05 15:50:03.643971"], ["updated_at", "2017-09-05 15:50:03.643971"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There was a fish in the percolator!"], ["author", "Watto"], ["content", "In numquam sed cum quis est omnis. Aut sed nemo dolore nisi molestiae. Error molestiae dolor labore libero voluptatem sint non. Voluptatibus et reprehenderit sit repellat. Nesciunt ipsa facilis non et tempore error deserunt."], ["created_at", "2017-09-05 15:50:03.648169"], ["updated_at", "2017-09-05 15:50:03.648169"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Damn fine coffee! And hot!"], ["author", "Boba Fett"], ["content", "Qui repellendus aspernatur natus eum. Quas nihil unde. Sequi accusamus ea assumenda provident."], ["created_at", "2017-09-05 15:50:03.651755"], ["updated_at", "2017-09-05 15:50:03.651755"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Wow, Bob, wow."], ["author", "Han Solo"], ["content", "Et mollitia pariatur veniam aut blanditiis. Ut quis est repudiandae ab voluptate. Deserunt quidem et. Est eveniet pariatur. Dolorem quia eum."], ["created_at", "2017-09-05 15:50:03.656840"], ["updated_at", "2017-09-05 15:50:03.656840"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "MAY A SMILE BE YOUR UMBRELLA. WE'VE ALL HAD OUR SOCKS TOSSED AROUND."], ["author", "Chewbacca"], ["content", "Quae rem sit voluptatem tempora soluta. Quam et dignissimos consequatur sint laborum. Aut nihil facilis provident."], ["created_at", "2017-09-05 15:50:03.660870"], ["updated_at", "2017-09-05 15:50:03.660870"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't wanna talk. I wanna shoot."], ["author", "Ben Solo"], ["content", "Ut illum autem nulla porro. In magni optio est non assumenda. Ducimus ratione sint voluptatibus excepturi nihil totam. Voluptas est ab accusantium libero enim harum. Architecto rerum voluptatibus quidem aliquam qui modi eum."], ["created_at", "2017-09-05 15:50:03.663304"], ["updated_at", "2017-09-05 15:50:03.663304"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Damn fine coffee! And hot!"], ["author", "Leia Organa"], ["content", "Velit est repellendus vero. Culpa et non atque. Consequuntur ea soluta veniam. Quae possimus et. Officia inventore aut similique asperiores qui."], ["created_at", "2017-09-05 15:50:03.666625"], ["updated_at", "2017-09-05 15:50:03.666625"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It has been a pleasure speaking to you."], ["author", "Luke Skywalker"], ["content", "Praesentium qui in quo et tenetur. Deleniti sunt ut. Sit dolorem odit earum iure distinctio minus assumenda."], ["created_at", "2017-09-05 15:50:03.668675"], ["updated_at", "2017-09-05 15:50:03.668675"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It has been a pleasure speaking to you."], ["author", "Anakin Skywalker"], ["content", "Sequi voluptates ipsa laboriosam architecto. Deleniti reiciendis rerum. Veritatis repellat optio. Assumenda qui et. Saepe eos ut."], ["created_at", "2017-09-05 15:50:03.670727"], ["updated_at", "2017-09-05 15:50:03.670727"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Will this sadness that makes me cry my heart out — will it ever end? The answer, of course, is yes. One day the sadness will end."], ["author", "Borvo the Hutt"], ["content", "Enim totam est. Deleniti quis molestiae. Eos porro illum voluptas."], ["created_at", "2017-09-05 15:50:03.674283"], ["updated_at", "2017-09-05 15:50:03.674283"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There was a fish in the percolator!"], ["author", "Nute Gunray"], ["content", "Iure eum laborum voluptatem dolorem itaque quo. Aut harum ducimus dignissimos necessitatibus. Ex totam aspernatur placeat at."], ["created_at", "2017-09-05 15:50:03.677193"], ["updated_at", "2017-09-05 15:50:03.677193"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "J'ai une âme solitaire."], ["author", "Darth Sidious"], ["content", "Cum et et voluptatem asperiores. Asperiores occaecati ut. Eos quae ad eveniet temporibus asperiores magnam ea."], ["created_at", "2017-09-05 15:50:03.679563"], ["updated_at", "2017-09-05 15:50:03.679563"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You know, this is — excuse me — a damn fine cup of coffee!"], ["author", "Boba Fett"], ["content", "Perspiciatis iure veniam occaecati eum sit quisquam minima. Modi corrupti similique quae vero commodi aut accusantium. Ut veniam recusandae laudantium accusamus aut."], ["created_at", "2017-09-05 15:50:03.682022"], ["updated_at", "2017-09-05 15:50:03.682022"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sometimes jokes are welcome. Like the one about the kid who said: \"I enjoyed school. It was just the principal of the thing.\""], ["author", "Poe Dameron"], ["content", "Sunt a omnis sint perspiciatis. Dignissimos velit iure reiciendis voluptas. Aperiam deserunt nesciunt non. Recusandae doloribus sunt ipsum doloremque perspiciatis omnis sed."], ["created_at", "2017-09-05 15:50:03.684115"], ["updated_at", "2017-09-05 15:50:03.684115"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Wow, Bob, wow."], ["author", "Rune Haako"], ["content", "Sit consectetur recusandae possimus tenetur voluptatem molestiae. Recusandae ut ex ut nam. Et autem ea."], ["created_at", "2017-09-05 15:50:03.686592"], ["updated_at", "2017-09-05 15:50:03.686592"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Borvo the Hutt"], ["content", "Ut non sint nemo deserunt. Est voluptatem natus velit culpa et. Quasi dolore quae voluptatem. Vero nihil commodi quod neque in consectetur adipisci."], ["created_at", "2017-09-05 15:50:03.688857"], ["updated_at", "2017-09-05 15:50:03.688857"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You know, this is — excuse me — a damn fine cup of coffee!"], ["author", "Borvo the Hutt"], ["content", "Velit inventore sit dicta dolorem et minima ut. Odit recusandae fugiat autem ex. Vel cupiditate molestiae atque quis nostrum. Est rerum quis error laborum quaerat eos."], ["created_at", "2017-09-05 15:50:03.693708"], ["updated_at", "2017-09-05 15:50:03.693708"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Padme Amidala"], ["content", "Sunt molestiae dolor consequuntur quaerat expedita odit. Occaecati cumque quis qui similique magni minus. Labore sed consequuntur unde eum qui molestias. Possimus voluptatem ad ipsum porro ut quo. Ratione quo vitae est."], ["created_at", "2017-09-05 15:50:03.697420"], ["updated_at", "2017-09-05 15:50:03.697420"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Windom Earle's mind is like a diamond. It's cold, and hard, and brilliant."], ["author", "Jabba the Hutt"], ["content", "Nulla enim voluptatem. Corrupti porro ut sunt. Nulla et magni."], ["created_at", "2017-09-05 15:50:03.699925"], ["updated_at", "2017-09-05 15:50:03.699925"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["author", "Darth Caedus"], ["content", "Ut voluptates quia illum necessitatibus eligendi et. Temporibus voluptas voluptatem. Esse dolores reiciendis nulla. Quia totam odit distinctio quam sit sunt. Mollitia quos et in et quia voluptatem."], ["created_at", "2017-09-05 15:50:03.701966"], ["updated_at", "2017-09-05 15:50:03.701966"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Harry, is that bag smiling?"], ["author", "Rune Haako"], ["content", "Suscipit facere vero sit harum. Et molestiae aliquid. Qui est debitis non nam fugiat hic. Quod voluptates sunt sed illum temporibus."], ["created_at", "2017-09-05 15:50:03.703989"], ["updated_at", "2017-09-05 15:50:03.703989"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Harry, is that bag smiling?"], ["author", "Count Dooku"], ["content", "Eligendi labore minima est. Eligendi consequatur nisi. Magnam qui ab."], ["created_at", "2017-09-05 15:50:03.707323"], ["updated_at", "2017-09-05 15:50:03.707323"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You know, this is — excuse me — a damn fine cup of coffee!"], ["author", "Chewbacca"], ["content", "Animi consequatur quod quia. Recusandae quia minus suscipit ea voluptatem alias possimus. Non molestiae delectus praesentium rerum. Libero iusto accusantium possimus."], ["created_at", "2017-09-05 15:50:03.710914"], ["updated_at", "2017-09-05 15:50:03.710914"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "MAY A SMILE BE YOUR UMBRELLA. WE'VE ALL HAD OUR SOCKS TOSSED AROUND."], ["author", "Jango Fett"], ["content", "Fuga repudiandae optio quos aut. Quo nesciunt quo nihil officiis. Ratione delectus similique corrupti."], ["created_at", "2017-09-05 15:50:03.715084"], ["updated_at", "2017-09-05 15:50:03.715084"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Do you want to know what the ultimate secret is? Laura did. The secret of knowing who killed you."], ["author", "Sheev Palpatine"], ["content", "Inventore blanditiis minima voluptatem facilis aut. Quidem qui alias. Omnis voluptate itaque incidunt quis. Magni inventore voluptatibus provident non."], ["created_at", "2017-09-05 15:50:03.719233"], ["updated_at", "2017-09-05 15:50:03.719233"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Pie. Whoever invented the pie? Here was a great person."], ["author", "Bail Organa"], ["content", "Totam minima aliquid corporis in. Aut vel qui non aut nulla rem. Omnis quis et voluptatem ipsum distinctio aut. Velit fuga in occaecati dolorem ducimus repellat architecto. Quos dicta aut reprehenderit molestiae."], ["created_at", "2017-09-05 15:50:03.726717"], ["updated_at", "2017-09-05 15:50:03.726717"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Mace Windu"], ["content", "Voluptate in non et odit aut perspiciatis. Maiores eum eius et deserunt architecto est. Nihil ea nobis amet. Voluptatibus consectetur qui quaerat dolores ea. Distinctio blanditiis voluptatem consequatur velit placeat suscipit."], ["created_at", "2017-09-05 15:50:03.729565"], ["updated_at", "2017-09-05 15:50:03.729565"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "How's Annie? How's Annie? How's Annie?"], ["author", "Darth Vader"], ["content", "Quod dolore distinctio libero quas blanditiis aliquam. Tenetur reprehenderit fugit fuga corporis dolorem sequi. Magnam sed exercitationem."], ["created_at", "2017-09-05 15:50:03.732918"], ["updated_at", "2017-09-05 15:50:03.732918"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Watto"], ["content", "Neque quod omnis eius odio ipsam. Quaerat aut tempora est. Error quis natus et est ea molestias. Ut perferendis officia eligendi et ut."], ["created_at", "2017-09-05 15:50:03.735336"], ["updated_at", "2017-09-05 15:50:03.735336"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Where we're from, the birds sing a pretty song, and there's always music in the air."], ["author", "Jabba the Hutt"], ["content", "Nostrum vero nesciunt nulla aspernatur magni. Animi aspernatur placeat totam maiores. Et necessitatibus voluptatem quia rem. Commodi similique sint qui. Tempore eius molestias quam pariatur modi quo."], ["created_at", "2017-09-05 15:50:03.740172"], ["updated_at", "2017-09-05 15:50:03.740172"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["author", "Darth Maul"], ["content", "Aspernatur possimus fugiat. Sed reiciendis rerum dignissimos est unde ut. Quas reprehenderit eligendi iure est quia possimus cupiditate. Omnis pariatur odit. Molestias officiis distinctio reiciendis assumenda qui."], ["created_at", "2017-09-05 15:50:03.744477"], ["updated_at", "2017-09-05 15:50:03.744477"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Where we're from, the birds sing a pretty song, and there's always music in the air."], ["author", "Darth Maul"], ["content", "Molestias in aliquam repellendus inventore quia. Nemo dicta autem facere illo fugit saepe qui. Accusantium qui optio qui."], ["created_at", "2017-09-05 15:50:03.749318"], ["updated_at", "2017-09-05 15:50:03.749318"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't wanna talk. I wanna shoot."], ["author", "Ben Solo"], ["content", "Saepe autem harum officia. Error nam quo. Quibusdam nobis aliquam nam adipisci sed voluptatem vero."], ["created_at", "2017-09-05 15:50:03.751432"], ["updated_at", "2017-09-05 15:50:03.751432"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "She's dead... Wrapped in plastic."], ["author", "Count Dooku"], ["content", "Sint unde eos est. Debitis aut ipsam aut. Neque et quos quaerat omnis. At sint consequatur nesciunt error est."], ["created_at", "2017-09-05 15:50:03.754009"], ["updated_at", "2017-09-05 15:50:03.754009"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "J'ai une âme solitaire."], ["author", "Wedge Antilles"], ["content", "Consequatur facere non ab in. Qui dolor dolorem. Tempore sint animi nihil eaque doloremque commodi rerum. Consequatur sint veritatis sunt debitis ipsam molestias placeat. Inventore eveniet reiciendis magnam aliquid id qui."], ["created_at", "2017-09-05 15:50:03.757990"], ["updated_at", "2017-09-05 15:50:03.757990"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 08:51:02 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.8ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 43ms (Views: 34.2ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2017-09-05 08:51:03 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.3) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.3) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.3) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.3) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.3) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 09:49:44 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (1.1ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 192ms (Views: 157.6ms | ActiveRecord: 34.2ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 10:04:45 -0700
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (7.7ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 149ms (Views: 122.0ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 10:05:21 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (1.4ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 247ms (Views: 221.1ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:36:01 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.8ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 69ms (Views: 53.8ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:37:55 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (16.9ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 96ms (Views: 57.5ms | ActiveRecord: 37.8ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:38:10 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (66.3ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 145ms (Views: 78.5ms | ActiveRecord: 66.3ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:38:31 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (1.2ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:40:07 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (4.2ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 128ms (Views: 123.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:41:08 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (1.6ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 120ms (Views: 118.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:42:06 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (2.7ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:43:40 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (26.0ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 77ms (Views: 50.4ms | ActiveRecord: 26.0ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:43:41 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.7ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 42ms (Views: 40.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:44:27 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.7ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:45:29 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.9ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:47:27 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (6.2ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 45ms (Views: 38.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:55:28 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (9.8ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 62ms (Views: 50.8ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 11:55:54 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.5ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:08:28 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (1.7ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 135ms (Views: 132.5ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/notices" for 127.0.0.1 at 2017-09-05 12:09:13 -0700
+Processing by NoticesController#create as HTML
+  Parameters: {"author"=>"BB-8", "title"=>"beep", "content"=>"beep, beep, bb-eeep.", "notice"=>{"title"=>"beep", "author"=>"BB-8", "content"=>"beep, beep, bb-eeep."}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (13.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "beep"], ["author", "BB-8"], ["content", "beep, beep, bb-eeep."], ["created_at", "2017-09-05 19:09:13.499916"], ["updated_at", "2017-09-05 19:09:13.499916"]]
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 61ms (Views: 1.2ms | ActiveRecord: 47.5ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:11:50 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (3.0ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 213ms (Views: 209.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:24:45 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.8ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 35ms (Views: 27.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 12:28:53 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (2.1ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 36ms (Views: 31.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-05 12:29:12 -0700
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
